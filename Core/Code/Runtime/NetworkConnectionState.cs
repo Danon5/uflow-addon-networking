@@ -1,5 +1,5 @@
 ﻿namespace UFlow.Addon.Networking.Core.Runtime {
-    public enum NetworkConnectionStateId : byte {
+    public enum NetworkConnectionState : byte {
         Stopped,
         Stopping,
         Started,
