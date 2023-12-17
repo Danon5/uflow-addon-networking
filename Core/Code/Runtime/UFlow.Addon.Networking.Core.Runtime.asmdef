@@ -1,0 +1,19 @@
+{
+    "name": "UFlow.Addon.Networking.Core.Runtime",
+    "rootNamespace": "UFlow.Addon.Networking.Core.Runtime",
+    "references": [
+        "GUID:a28e8ed336e96b444813ab50041fceaf",
+        "GUID:bb1ffefc3dfaace4eb1d1ecc2cf4e24a",
+        "GUID:b4becca5799d6734593d9ef8f5022338",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
