@@ -9,6 +9,8 @@ namespace UFlow.Addon.Networking.Core.Runtime {
         public event StartedDelegate StartedEvent;
         public event StoppingDelegate StoppingEvent;
         public event StoppedDelegate StoppedEvent;
+        public event PeerConnectedDelegate PeerConnectedEvent;
+        public event PeerDisconnectedDelegate PeerDisconnectedEvent;
         public const ushort DEFAULT_PORT = 7777;
         public const string DEFAULT_KEY = "Key";
         private readonly NetManager m_server;
@@ -88,12 +90,17 @@ namespace UFlow.Addon.Networking.Core.Runtime {
 #if UFLOW_DEBUG_ENABLED
             Debug.Log($"Peer connected. ID: {peer.Id}");
 #endif
+            PeerConnectedEvent?.Invoke(peer);
         }
 
         private void OnPeerDisconnected(NetPeer peer, DisconnectInfo disconnectInfo) {
 #if UFLOW_DEBUG_ENABLED
             Debug.Log($"Peer disconnected. ID: {peer.Id}");
 #endif
+            PeerDisconnectedEvent?.Invoke(peer, disconnectInfo);
         }
+
+        public delegate void PeerConnectedDelegate(NetPeer peer);
+        public delegate void PeerDisconnectedDelegate(NetPeer peer, DisconnectInfo disconnectInfo);
     }
 }
